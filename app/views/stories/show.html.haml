@@ -1,0 +1,6 @@
+%h1= @story.title
+%p= @story.description
+
+= link_to "Back", root_path
+= link_to "Edit", edit_story_path
+= link_to "Delete", story_path, method: :delete, data: { confirm: "Are you sure?" }

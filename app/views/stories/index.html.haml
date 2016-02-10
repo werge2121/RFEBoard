@@ -1,3 +1,8 @@
-= link_to "New Story", new_story_path
-- @stories.each do |story|
-	%h2= link_to story.title, story
+#stories
+	- @stories.each do |story|
+		.box.panel.panel-inverse
+			.panel-heading
+				.panel-title
+					= link_to story.title, story
+			.panel-body
+				%p= story.description

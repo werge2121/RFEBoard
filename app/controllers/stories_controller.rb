@@ -9,11 +9,11 @@ class StoriesController < ApplicationController
     end
     
     def new
-    	@story = current_user.story.build
+    	@story = current_user.stories.build
     end
     
     def create
-    	@story = current_user.story.build(story_params)
+    	@story = current_user.stories.build(story_params)
 
     	if @story.save
     		redirect_to @story, notice: "Succesfully created new Story"

@@ -5,14 +5,14 @@ class StoriesController < ApplicationController
     	@stories = Story.all.order("created_at DESC")
         for story in @stories
             if(story.youtube.to_s != '')
-                story.youtube = YouTubeAddy.youtube_embed_url(story.youtube, 420, 315)
+                story.youtube = YouTubeAddy.youtube_embed_url(story.youtube, 420, 315).gsub! 'http', 'https'
             end
         end
     end
     
     def show
         if @story.youtube.to_s != ''
-            @story.youtube = YouTubeAddy.youtube_embed_url(@story.youtube, 840, 630)
+            @story.youtube = YouTubeAddy.youtube_embed_url(@story.youtube, 840, 630).gsub! 'http', 'https'
         end
     end
     

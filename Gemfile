@@ -28,6 +28,8 @@ gem 'bootstrap-material-design', '~> 0.2.2'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'bcrypt-ruby', '3.0.0', :require => 'bcrypt'
 gem 'devise', '~> 3.5', '>= 3.5.6'
+gem 'youtube_addy', '~> 1.0', '>= 1.0.4'
+gem 'masonry-rails', '~> 0.2.4'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

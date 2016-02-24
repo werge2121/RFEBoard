@@ -1,8 +1,10 @@
-#stories
+#stories.transitions-enabled
 	- @stories.each do |story|
-		.box.panel.panel-inverse
-			.panel-heading
-				.panel-title
-					= link_to story.title, story
-			.panel-body
-				%p= story.description
+		.box.panel.panel-default
+			- if story.youtube.to_s != ''
+				= story.youtube.html_safe
+			%h2= link_to story.title, story
+			%p.user
+				Submitted by
+				= story.user.email
+			

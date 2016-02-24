@@ -3,9 +3,17 @@ class StoriesController < ApplicationController
 
     def index
     	@stories = Story.all.order("created_at DESC")
+        for story in @stories
+            if(story.youtube.to_s != '')
+                story.youtube = YouTubeAddy.youtube_embed_url(story.youtube, 420, 315)
+            end
+        end
     end
     
     def show
+        if @story.youtube.to_s != ''
+            @story.youtube = YouTubeAddy.youtube_embed_url(@story.youtube, 840, 630)
+        end
     end
     
     def new
@@ -41,7 +49,7 @@ class StoriesController < ApplicationController
     private
 
     def story_params
-        params.require(:story).permit(:title, :description)
+        params.require(:story).permit(:title, :youtube, :description)
     end
 
     def find_story

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209224306) do
+ActiveRecord::Schema.define(version: 20160224194736) do
 
   create_table "stories", force: :cascade do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160209224306) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.string   "youtube"
   end
 
   add_index "stories", ["user_id"], name: "index_stories_on_user_id"

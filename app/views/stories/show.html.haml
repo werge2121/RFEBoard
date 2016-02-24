@@ -1,8 +1,20 @@
-%h1= @story.title
-%p= @story.description
-%p Submitted by
-= @story.user.email
-%br
-= link_to "Back", root_path
-= link_to "Edit", edit_story_path
-= link_to "Delete", story_path, method: :delete, data: { confirm: "Are you sure?" }
+#story_show.row
+	.col-md-8.col-md-offset-2
+		.panel.panel-default
+			.panel-heading.story_image
+				- if @story.youtube.to_s != ''
+					= @story.youtube.html_safe
+			.panel-body
+				%h1= @story.title
+				%p.description= @story.description
+			.panel-footer
+				.row
+					.col-md-6
+						%p.user
+							Submitted by
+							= @story.user.email
+					.col-md-6
+						.btn-group.pull-right
+							- if user_signed_in?
+								= link_to "Edit", edit_story_path, class: "btn btn-default"
+								= link_to "Delete", story_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"

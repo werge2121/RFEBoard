@@ -15,4 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
-//= require bootstrap-material-design
+//= require masonry/jquery.masonry

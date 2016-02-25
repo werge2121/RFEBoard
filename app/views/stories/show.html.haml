@@ -4,6 +4,8 @@
 			.panel-heading.story_image
 				- if @story.youtube.to_s != ''
 					= @story.youtube.html_safe
+				- if @story.vine.to_s != ''
+					= @story.vine.html_safe
 			.panel-body
 				%h1= @story.title
 				%p.description= @story.description

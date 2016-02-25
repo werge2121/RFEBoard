@@ -7,12 +7,18 @@ class StoriesController < ApplicationController
             if(story.youtube.to_s != '')
                 story.youtube = YouTubeAddy.youtube_embed_url(story.youtube, 420, 315).gsub! 'http', 'https'
             end
+            if(story.vine.to_s != '')
+                story.vine = '<iframe src="' + story.vine + '/embed/simple" width="600" height="600" frameborder="0"></iframe><script src="https://platform.vine.co/static/scripts/embed.js"></script>'
+            end
         end
     end
     
     def show
         if @story.youtube.to_s != ''
             @story.youtube = YouTubeAddy.youtube_embed_url(@story.youtube, 840, 630).gsub! 'http', 'https'
+        end
+        if @story.vine.to_s != ''
+            @story.vine = '<iframe src="' + @story.vine + '/embed/simple" width="600" height="600" frameborder="0"></iframe><script src="https://platform.vine.co/static/scripts/embed.js"></script>'
         end
     end
     
@@ -49,7 +55,7 @@ class StoriesController < ApplicationController
     private
 
     def story_params
-        params.require(:story).permit(:title, :youtube, :description)
+        params.require(:story).permit(:title, :youtube, :vine, :description)
     end
 
     def find_story

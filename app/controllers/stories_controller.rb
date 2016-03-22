@@ -55,7 +55,7 @@ class StoriesController < ApplicationController
     private
 
     def story_params
-        params.require(:story).permit(:title, :youtube, :vine, :description)
+        params.require(:story).permit(:title, :youtube, :vine, :twitter, :description)
     end
 
     def find_story

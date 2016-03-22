@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    actioncable (0.0.0)
     actionmailer (4.2.5.1)
       actionpack (= 4.2.5.1)
       actionview (= 4.2.5.1)
@@ -129,7 +128,6 @@ GEM
     rake (10.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
-    redis (3.2.2)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
     sass (3.4.21)
@@ -182,7 +180,6 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  actioncable (~> 0.0.0)
   bcrypt-ruby (= 3.0.0)
   bootstrap-material-design (~> 0.2.2)
   bootstrap-sass (~> 3.3, >= 3.3.6)
@@ -195,7 +192,6 @@ DEPENDENCIES
   masonry-rails (~> 0.2.4)
   pg
   rails (= 4.2.5.1)
-  redis (~> 3.2, >= 3.2.2)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form (~> 3.2, >= 3.2.1)

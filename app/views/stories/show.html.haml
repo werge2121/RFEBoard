@@ -6,6 +6,9 @@
 					= @story.youtube.html_safe
 				- if @story.vine.to_s != ''
 					= @story.vine.html_safe
+				- if @story.twitter.to_s != ''
+					.twitter
+						= @story.twitter.html_safe 
 			.panel-body
 				%h1= @story.title
 				%p.description= @story.description

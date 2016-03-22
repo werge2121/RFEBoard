@@ -1,0 +1,9 @@
+.box.panel.panel-default
+	- if story.youtube.to_s != ''
+		= story.youtube.html_safe
+	- if story.vine.to_s != ''
+		= story.vine.html_safe
+	%h2= link_to story.title, story
+	%p.user
+		Submitted by
+		= story.user.email
